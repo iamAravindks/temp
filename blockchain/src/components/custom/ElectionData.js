@@ -28,47 +28,37 @@ const ElectionData = () => {
 
   return (
     <div className="container">
-      <ul className="collection">
-        <li className="collection-item avatar">
-          <h3>Elections</h3>
-        </li>
-        {electionList.map((election) => (
-          <div className="contact" key={election.election_id}>
-            <li className="collection-item avatar">
-              <i className="material-icons circle blue darken-2">ballot</i>
-              <p>
-                <b>{election.election_name}</b>
-              </p>
-              <br></br>
-              <Link
-                to={`/candidates/${election.election_id}`}
-                className="title"
-                onClick={handleInputChange}
-              >
-                <button
-                  id={election.election_id}
-                  className="waves-effect waves-light btn yellow darken-3"
-                >
-                  Add candidate
-                </button>
-              </Link>
-              &nbsp;&nbsp;&nbsp;
-              <Link
-                to={`/voteCount/${election.election_id}`}
-                className="title"
-                onClick={handleInputChange}
-              >
-                <button
-                  id={election.election_id}
-                  className="waves-effect waves-light btn red darken-3"
-                >
-                  View vote Count
-                </button>
-              </Link>
-            </li>
+      <h2 className="mt-3 mb-16 text-center text-3xl font-extrabold text-gray-900">
+        Active Elections
+      </h2>
+      {electionList.map((election) => (
+        <>
+          <div
+            className="flex mt-4 px-4 py-1 items-center  border rounded-md hover:bg-zinc-100"
+            key={election.election_id}
+          >
+            <p className="w-full text-grey-darkest">{election.election_name}</p>
+            <Link
+              to={`/candidates/${election.election_id}`}
+              className="title"
+              onClick={handleInputChange}
+            >
+              <button className="flex-no-shrink p-2 text-sm ml-4 mr-2 border-2 rounded hover:text-white text-green-600 border-green-500 hover:bg-green-400">
+                Add candidate
+              </button>
+            </Link>
+            <Link
+              to={`/voteCount/${election.election_id}`}
+              className="title"
+              onClick={handleInputChange}
+            >
+              <button className="flex-no-shrink p-2 text-sm ml-2 border-2 rounded text-yellow-500 border-yellow-500 hover:text-white hover:bg-yellow-400">
+                View vote count
+              </button>
+            </Link>
           </div>
-        ))}
-      </ul>
+        </>
+      ))}
     </div>
   );
 };

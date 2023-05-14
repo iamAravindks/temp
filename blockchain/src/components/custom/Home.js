@@ -24,31 +24,15 @@ const Home = () => {
               using Ethereum blockchain. Your vote will be confidential and will
               not be revealed to anyone
             </p>
-          </div>
-          <div>
-            <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-              Login
-            </h2>
-          </div>
-          <div className="-m-2 flex flex-wrap">
-            <div>
-              <Link to="/choose" className="secondary-content">
-                <button
-                  type="submit"
-                  className="group relative w-full flex justify-center py-2 px-4 m-12 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-500 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-400"
-                >
-                  User Log In
+            <div className="">
+              <Link to="/login">
+                <button className="group relative w-2/5 lg:mx-0 md:mx-auto my-2 mx-auto flex justify-center py-2 px-3 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-500 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-400">
+                  Admin
                 </button>
               </Link>
-            </div>
-
-            <div>
-              <Link to="/login" className="secondary-content">
-                <button
-                  type="submit"
-                  className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-500 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-400"
-                >
-                  Admin Log In
+              <Link to="/choose">
+                <button className="group relative w-2/5 lg:mx-0 md:mx-auto mx-auto flex justify-center py-2 px-3 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-500 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-400">
+                  User
                 </button>
               </Link>
             </div>

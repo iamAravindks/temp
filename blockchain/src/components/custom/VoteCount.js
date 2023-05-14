@@ -90,28 +90,28 @@ class VoteCount extends Component {
   render() {
     const electionList = this.state.candidates.map((candidates) => {
       return (
-        <div className="contact" key={candidates.id}>
-          <li className="collection-item avatar">
-            <i className="material-icons circle blue darken-2">ballot</i>
-            <p>
-              <b>{candidates.name}</b>
+        <div
+          className="flex mt-4 px-4 py-1 items-center justify-between  border rounded-md hover:bg-zinc-100"
+          key={candidates.id}
+        >
+          <div>
+            <p className="w-full text-grey-darkest font-bold">
+              {candidates.name}
             </p>
-            <p>{candidates.details}</p>
-            <p className="secondary-content">
-              <b>{candidates.voteCount}</b>
-            </p>
-          </li>
+            <p className="text-zinc-500 italic">{candidates.details}</p>
+          </div>
+          <button className="text-green-500 text-xl font-bold m-2">
+            {candidates.voteCount}
+          </button>
         </div>
       );
     });
     return (
-      <div className="container">
-        <ul className="collection">
-          <li className="collection-item avatar">
-            <p className="title">Candidates</p>
-          </li>
-          {electionList}
-        </ul>
+      <div className="w-1/2">
+        <h2 className="mt-3 mb-16 text-center text-3xl font-extrabold text-gray-900">
+          Vote statistics
+        </h2>
+        {electionList}
       </div>
     );
   }
