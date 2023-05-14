@@ -37,18 +37,23 @@ const Choose = () => {
 
   const electionList = final.map((election) => {
     return (
-      <div className="contact" key={election.election_id}>
-        <li className="collection-item avatar">
-          <i className="material-icons circle blue darken-2">ballot</i>
+      <>
+        <div
+          className="flex mt-4 px-4 py-1 items-center  border rounded-md hover:bg-zinc-100"
+          key={election.election_id}
+        >
+          <p className="w-full text-grey-darkest">{election.election_name}</p>
           <Link
             to={"/vote/" + election.election_id}
             className="title"
             onClick={handleInputChange}
           >
-            {election.election_name}
+            <button className="flex-no-shrink py-2 px-4 text-sm ml-4 mr-2 border-2 rounded hover:text-white text-green-600 border-green-500 hover:bg-green-400">
+              Vote
+            </button>
           </Link>
-        </li>
-      </div>
+        </div>
+      </>
     );
   });
   return (

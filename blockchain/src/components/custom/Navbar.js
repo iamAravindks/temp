@@ -20,8 +20,8 @@ class Navbar extends Component {
       this.state.location === "/login"
     ) {
       return (
-        <nav class="font-sans flex flex-col text-center sm:flex-row sm:text-left sm:justify-between py-6 px-6 bg-indigo-500 shadow sm:items-baseline w-full">
-          <div class="mb-2 sm:mb-0">
+        <nav className="font-sans flex flex-col text-center sm:flex-row sm:text-left sm:justify-between py-6 px-6 bg-indigo-500 shadow sm:items-baseline w-full">
+          <div className="mb-2 sm:mb-0">
             <NavLink to="/">
               <span className="font-extrabold text-2xl text-white">Votem</span>
             </NavLink>
@@ -30,8 +30,8 @@ class Navbar extends Component {
       );
     } else {
       return (
-        <nav class="font-sans flex flex-col text-center sm:flex-row sm:text-left sm:justify-between py-6 px-6 bg-indigo-500 shadow sm:items-baseline w-full">
-          <div class="mb-2 sm:mb-0">
+        <nav className="font-sans flex flex-col text-center sm:flex-row sm:text-left sm:justify-between py-6 px-6 bg-indigo-500 shadow sm:items-baseline w-full">
+          <div className="mb-2 sm:mb-0">
             <NavLink to="/">
               <span className="font-extrabold text-2xl text-white">Votem</span>
             </NavLink>

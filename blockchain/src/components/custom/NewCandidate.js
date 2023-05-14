@@ -25,6 +25,7 @@ class NewCandidate extends Component {
     this.setState({
       [e.target.id]: e.target.value,
     });
+    console.log(e.target.id + "have value" + e.target.value);
   };
 
   async loadBlockChain() {
@@ -110,8 +111,8 @@ class NewCandidate extends Component {
                   </div>
 
                   <input
-                    name="name"
-                    id="name"
+                    name="candidate_name"
+                    id="candidate_name"
                     className="focus:ring-indigo-500 py-2 focus:border-indigo-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md"
                     placeholder="Enter candidate's name"
                     onChange={this.handleInputChange}
@@ -136,8 +137,8 @@ class NewCandidate extends Component {
                   <textarea
                     type="text"
                     rows="10"
-                    name="description"
-                    id="description"
+                    name="candidate_details"
+                    id="candidate_details"
                     className="focus:ring-indigo-500 py-2 focus:border-indigo-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md"
                     placeholder="Add candidate's description. Max: 150 characters"
                     onChange={this.handleInputChange}
