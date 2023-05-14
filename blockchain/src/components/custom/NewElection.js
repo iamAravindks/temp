@@ -37,42 +37,106 @@ class NewElection extends Component {
 
   render() {
     return (
-      <div className="container">
-        <h4>Create New Election</h4>
-        <form onSubmit={this.handleSubmit}>
-          <input
-            type="text"
-            id="election_name"
-            name="election_name"
-            onChange={this.handleInputChange}
-            required
-          />
-          <label htmlFor="name">Election Name</label>
-          <br></br>
-          <input
-            type="text"
-            id="election_organizer"
-            name="election_organizer"
-            onChange={this.handleInputChange}
-            required
-          />
-          <label htmlFor="name">Election Organizer</label>
-          <br></br>
-          <input
-            type="password"
-            id="election_password"
-            name="election_password"
-            onChange={this.handleInputChange}
-            required
-          />
-          <label htmlFor="name">Election Password</label>
-          <br></br>
-          <br></br>
-          <button className="btn blue darken-2" type="submit" name="action">
-            Submit
-            <i className="material-icons right">send</i>
-          </button>
-        </form>
+      <div className="min-h-screen w-1/2 flex-row items-center justify-center bg-gray-50 py-12 px-16 sm:px-6 lg:px-8">
+        <div className="w-full space-y-8">
+          <div>
+            <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+              New Election
+            </h2>
+          </div>
+          <form onSubmit={this.handleSubmit}>
+            <div className="rounded-md shadow-sm space-y-4">
+              <div>
+                {/* NAME */}
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Username
+                </label>
+
+                <div className="mt-1 relative rounded-md shadow-sm">
+                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    {/* <MdOutlineDriveFileRenameOutline
+                        className="h-5 w-5 text-gray-400"
+                        aria-hidden="true"
+                      /> */}
+                  </div>
+
+                  <input
+                    name="election_name"
+                    id="election_name"
+                    className="focus:ring-indigo-500 py-2 focus:border-indigo-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md"
+                    placeholder="Enter election name"
+                    onChange={this.handleInputChange}
+                    required
+                  />
+                </div>
+              </div>
+              {/* ORGANIZER */}
+              <div>
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Organizer
+                </label>
+
+                <div className="mt-1 relative rounded-md shadow-sm">
+                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    {/* <MdOutlineDriveFileRenameOutline
+                        className="h-5 w-5 text-gray-400"
+                        aria-hidden="true"
+                      /> */}
+                  </div>
+
+                  <input
+                    name="election_organizer"
+                    id="election_organizer"
+                    className="focus:ring-indigo-500 py-2 focus:border-indigo-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md"
+                    placeholder="Enter election organizer"
+                    onChange={this.handleInputChange}
+                    required
+                  />
+                </div>
+              </div>
+              <div>
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium text-gray-700"
+                >
+                  Password
+                </label>
+
+                <div className="mt-1 relative rounded-md shadow-sm">
+                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    {/* <MdOutlineDriveFileRenameOutline
+                        className="h-5 w-5 text-gray-400"
+                        aria-hidden="true"
+                      /> */}
+                  </div>
+
+                  <input
+                    name="election_password"
+                    id="election_password"
+                    className="focus:ring-indigo-500 py-2 focus:border-indigo-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md"
+                    placeholder="Enter election password"
+                    onChange={this.handleInputChange}
+                    required
+                  />
+                </div>
+              </div>
+              <br></br>
+              <button
+                className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-sm text-white bg-indigo-500 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-400"
+                type="submit"
+                name="action"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
     );
   }

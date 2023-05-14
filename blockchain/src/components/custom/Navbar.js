@@ -20,38 +20,40 @@ class Navbar extends Component {
       this.state.location === "/login"
     ) {
       return (
-        <nav className="nav-wrapper bg-indigo-500 darken-2">
-          <div className="container">
-            <a className="brand-logo mx-2 mt-4 text-3xl font-extrabold">
-              Votem
-            </a>
+        <nav class="font-sans flex flex-col text-center sm:flex-row sm:text-left sm:justify-between py-6 px-6 bg-indigo-500 shadow sm:items-baseline w-full">
+          <div class="mb-2 sm:mb-0">
+            <NavLink to="/">
+              <span className="font-extrabold text-2xl text-white">Votem</span>
+            </NavLink>
           </div>
         </nav>
       );
     } else {
       return (
-        <nav className="nav-wrapper bg-indigo-500 darken-2">
-          <div className="container">
-            <a className="brand-logo mx-2 mt-4 text-3xl font-extrabold">
-              Votem
-            </a>
-            <ul className="right">
-              <li>
-                <NavLink to="/">
-                  <span className="font-bold">Home</span>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/newelection">
-                  <span className="font-bold">New Election</span>
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/elections">
-                  <span className="font-bold">Elections</span>
-                </NavLink>
-              </li>
-            </ul>
+        <nav class="font-sans flex flex-col text-center sm:flex-row sm:text-left sm:justify-between py-6 px-6 bg-indigo-500 shadow sm:items-baseline w-full">
+          <div class="mb-2 sm:mb-0">
+            <NavLink to="/">
+              <span className="font-extrabold text-2xl text-white">Votem</span>
+            </NavLink>
+          </div>
+          <div>
+            <NavLink to="/">
+              <span className="text-white text-lg no-underline text-grey-darkest hover:text-blue-dark mx-4 p-2 font-bold">
+                Home
+              </span>
+            </NavLink>
+
+            <NavLink to="/newelection">
+              <span className="text-white text-lg no-underline text-grey-darkest hover:text-blue-dark mx-4 p-2 font-bold">
+                New Election
+              </span>
+            </NavLink>
+
+            <NavLink to="/elections">
+              <span className="text-white text-lg no-underline text-grey-darkest hover:text-blue-dark mx-4 p-2 font-bold">
+                Elections
+              </span>
+            </NavLink>
           </div>
         </nav>
       );
