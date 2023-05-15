@@ -52,7 +52,7 @@ class NewElection extends Component {
                   htmlFor="name"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Username
+                  Election name
                 </label>
 
                 <div className="mt-1 relative rounded-md shadow-sm">
@@ -123,6 +123,7 @@ class NewElection extends Component {
                     placeholder="Enter election password"
                     onChange={this.handleInputChange}
                     required
+                    type="password"
                   />
                 </div>
               </div>

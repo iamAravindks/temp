@@ -27,7 +27,7 @@ const ElectionData = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container py-8">
       <h2 className="mt-3 mb-16 text-center text-3xl font-extrabold text-gray-900">
         Active Elections
       </h2>

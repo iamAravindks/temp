@@ -25,12 +25,12 @@ const Home = () => {
               not be revealed to anyone
             </p>
             <div className="">
-              <Link to="/login">
+              <Link to="/admin-login">
                 <button className="group relative w-2/5 lg:mx-0 md:mx-auto my-2 mx-auto flex justify-center py-2 px-3 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-500 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-400">
                   Admin
                 </button>
               </Link>
-              <Link to="/choose">
+              <Link to="/user-login">
                 <button className="group relative w-2/5 lg:mx-0 md:mx-auto mx-auto flex justify-center py-2 px-3 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-500 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-400">
                   User
                 </button>

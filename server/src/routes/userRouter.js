@@ -9,9 +9,9 @@ userRouter.post(
   "/login",
   expressAsyncHandler(async (req, res) => {
     try {
-      const { email, name } = req.body;
+      const { email } = req.body;
 
-      if (!email || !name) {
+      if (!email) {
         res.status(400);
         throw new Error("Email and name field are required");
       }

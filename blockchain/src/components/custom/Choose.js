@@ -57,10 +57,12 @@ const Choose = () => {
     );
   });
   return (
-    <div className="container">
+    <div className="container py-10">
       <ul className="collection">
         <li className="collection-item avatar">
-          <h3>Elections</h3>
+          <h3 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
+            Elections
+          </h3>
         </li>
         {electionList}
       </ul>
