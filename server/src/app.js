@@ -26,12 +26,6 @@ app.get("/", function (req, res) {
   res.json("Works!");
 });
 
-sendEmail({
-  email: "pkd19cs013@gecskp.ac.in",
-  subject: "just fun",
-  message: "hello",
-});
-
 app.use("/api", electionRouter);
 app.use("/api/voter", userRouter);
 app.use(notFound);
