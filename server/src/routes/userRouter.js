@@ -2,6 +2,7 @@ import { Router } from "express";
 import expressAsyncHandler from "express-async-handler";
 import sendEmail from "../utils/sendEmail.js";
 import User from "../models/userModel.js";
+import axios from "axios";
 
 const userRouter = Router();
 
@@ -9,29 +10,45 @@ userRouter.post(
   "/login",
   expressAsyncHandler(async (req, res) => {
     try {
-      const { email } = req.body;
+      const { aadhar } = req.body;
 
-      if (!email) {
+      if (!aadhar) {
         res.status(400);
-        throw new Error("Email and name field are required");
+        throw new Error("Aadhar field are required");
       }
 
-      const user = await User.findOne({
-        email,
+      const response = await axios.get(
+        `http://localhost:5050/api/adb/users/${aadhar}`
+      );
+
+      if (response.data) {
+        console.log(response.data);
+      } else if (response.status === 404) {
+        throw new Error(`There is no user with aadhar ${aadhar}`);
+      } else if (response.status !== 200) {
+        throw new Error("Request failed with status " + response.status);
+      }
+
+      const data = response.data?.data;
+
+      let user = await User.findOne({
+        ...data,
       });
 
       if (!user) {
-        res.status(400);
-        throw new Error(`No user with ${email} found`);
+        user = await User.create({
+          ...data,
+        });
       }
 
       const otpToken = await user.createOtpToken();
       await user.save({ validateBeforeSave: false });
+
       const message = `Use the OTP to login\n OTP : ${otpToken}`;
 
       try {
         await sendEmail({
-          email,
+          email: user.email,
           subject: "OTP for login",
           message,
         });

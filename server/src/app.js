@@ -3,7 +3,7 @@ import cors from "cors";
 import connectDB from "./config/db.js";
 import electionRouter from "./routes/electionRoute.js";
 import userRouter from "./routes/userRouter.js";
-
+import morgan from "morgan";
 import { notFound, errorHandler } from "./middlewares/middlewares.js";
 import sendEmail from "./utils/sendEmail.js";
 
@@ -13,6 +13,8 @@ app.use(
     origin: true,
   })
 );
+
+app.use(morgan("dev"));
 app.use(express.json());
 app.use(
   express.urlencoded({

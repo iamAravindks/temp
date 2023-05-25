@@ -3,7 +3,6 @@ import axios from "axios";
 import OTP from "../OTP/OTP";
 
 const SignUp = () => {
-  const [email, setEmail] = useState("");
   const [aadhar, setAadhar] = useState("");
   const [isOtpSend, setIsOtpSend] = useState(false);
 
@@ -13,14 +12,13 @@ const SignUp = () => {
   }
 
   const onChangeHandler = (e) => {
-    if (e.target.id === "email") setEmail(e.target.value);
-    else if (e.target.id === "aadhar") setAadhar(e.target.value);
+    if (e.target.id === "aadhar") setAadhar(e.target.value);
   };
 
-  const getOtpFromEmail = async (email) => {
+  const getOtpFromAadhar = async (aadhar) => {
     try {
       const res = await axios.post("http://localhost:8000/api/voter/login", {
-        email,
+        aadhar,
       });
       console.log(res);
 
@@ -35,32 +33,13 @@ const SignUp = () => {
   const onSubmitHandler = (e) => {
     e.preventDefault();
 
-    getOtpFromEmail(email);
+    getOtpFromAadhar(aadhar);
   };
 
   return (
     <div className="min-h-screen w-full flex flex-col justify-center items-center">
       <h1 className="text-3xl uppercase font-extrabold my-5">Sign Up</h1>
       <form className="flex flex-col gap-5" onSubmit={onSubmitHandler}>
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text">Your Email</span>
-          </label>
-          <label className="input-group">
-            <span>@</span>
-            <input
-              type="email"
-              placeholder="hello@votem.in"
-              className="input input-bordered w-full"
-              id="email"
-              required
-              value={email}
-              onChange={onChangeHandler}
-              disabled={isOtpSend}
-            />
-          </label>
-        </div>
-
         <div className="form-control">
           <label className="label">
             <span className="label-text">Your Aadhar Number</span>

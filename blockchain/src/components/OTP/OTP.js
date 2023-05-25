@@ -29,7 +29,8 @@ const OTP = ({ isOtpSend, setIsOtpSend }) => {
       );
 
       if (res.status === 200) {
-        window.location.assign("/choose");
+        alert("Verified");
+        setTimeout(() => window.location.assign("/choose"), 600);
       }
 
       console.log(res);
